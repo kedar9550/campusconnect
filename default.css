@@ -1,0 +1,240 @@
+
+
+.logintext {
+    color: #ffffff !important;
+}
+
+
+.login_card {
+    background-color: rgba(173, 173, 173, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    /* default label color */
+}
+
+/* Hide default radio */
+.custom-radio input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Inner dot */
+.custom-radio input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.custom-radio input[type="radio"]:checked {
+    border-color: #ff5e00;
+
+}
+
+.custom-radio input[type="radio"]:checked::before {
+    background: #ff5e00;
+
+}
+
+
+.custom-radio input[type="radio"]:checked+span {
+    color: #0039a3;
+    font-weight: 600;
+}
+
+.input-group-text {
+    background: white;
+}
+
+.submit {
+    background-color: #0039a3;
+    color: aliceblue;
+    height: 45px;
+    width: 160px;
+    border-radius: 8px;
+    border-width: 0px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+/* FULL SCREEN LAYOUT */
+.main-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins' !important;
+    margin: 0;
+    font-size: 16px;
+
+    background: url('./sources/Background.webp') no-repeat center 20% / cover fixed;
+}
+
+/* Top logo area */
+.top-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px!important;
+    
+}
+
+
+
+
+.Logo {
+    max-height: 85%;
+    width: auto;
+    margin-top: 0!important;
+
+}
+
+/* Hero fills remaining space */
+.hero-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+.campus-img {
+    max-width: 650px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Tablets (below 992px) */
+@media (max-width: 991px) {
+    .campus-img {
+        max-width: 350px;
+        
+        
+        display: block;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .campus-img {
+        max-width: 260px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .campus-img {
+        max-width: 200px;
+    }
+}
+
+/* Card sizing */
+.login_card {
+    max-width: 420px;
+    width: 100%;
+}
+
+/*  Mobile scroll allowed */
+@media (max-width: 992px) {
+    .main-page {
+        height: auto;
+        overflow: auto;
+    }
+     .top-logo {
+        flex: none;
+        padding: 10px 0;
+    }
+}
+.links a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    
+    color: #fff;                     
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6); 
+
+    padding: 4px 10px;
+    border-radius: 6px;
+
+    transition: all 0.3s ease;
+     position: relative;
+    display: inline-block;
+}
+
+/* Hover: show brand gradient */
+/* .links a:hover {
+    background: linear-gradient(90deg, #ff5e00, #0039a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #ff5e00;
+    
+    transform: scale(1.06);
+} */
+
+/* BLUR GLASS LAYER */
+.links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);  /* glass tint */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+/* HOVER EFFECT */
+.links a:hover {
+    background: linear-gradient(90deg, #ff5e00, #0039a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #ff5e00;
+    transform: scale(1.06);
+}
+
+/* SHOW BLUR ON HOVER */
+.links a:hover::before {
+    opacity: 1;
+}
