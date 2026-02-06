@@ -1,17 +1,179 @@
-.logintext {
-    color: #ffffff !important;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* height: 100vh;
+    align-items: center;
+    justify-content: space-between; */
+    font-family: 'Poppins' !important;
+    margin: 0;
+    font-size: 16px;
+   
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('./sources/Background.jpg') center / cover no-repeat;
+    z-index: -1;
+}
+
+main {
+     flex: 1;
+    display: flex;
+    align-items: center;
+}
+main .container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    main {
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+
+footer {
+    background-color: transparent;
+    padding: 1rem 0;
+    /* border-top: 1px solid #dee2e6; */
+}
+.Header{
+    background-color: transparent;
+    
+    /* position: relative;
+    z-index: 2; */
+     
+    text-align: center;
+}
+
+.logo-img {
+    /* height: clamp(80px, 12vw, 170px);
+    width: auto; */
+
+    max-width: clamp(180px, 70vw, 750px);
+    height: auto;
+}
+
+
+
+/* Extra small devices */
+@media (max-width: 480px) {
+
+    main {
+        align-items: flex-start;   /* stop vertical centering */
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+    }
+
+    main .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .logo-img {
+        max-width: 80% !important;
+    }
+
+    .card {
+        max-width: 100% !important;
+        border-radius: 12px;
+    }
+
+    .row {
+        gap: 20px 0;
+    }
+
+    img.img-fluid {
+        max-width: 85%;
+    }
+}
+
+
+.campus-image {
+    width: clamp(260px, 60vw, 520px);
+    height: auto;
+}
+
+
+.links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    /* glass tint */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+/* HOVER EFFECT */
+.links a:hover {
+    background: linear-gradient(90deg, #ff5e00, #0039a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #ff5e00;
+    transform: scale(1.06);
+}
+
+/* SHOW BLUR ON HOVER */
+.links a:hover::before {
+    opacity: 1;
+}
+
+
+.links a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+
+    padding: 4px 10px;
+    border-radius: 6px;
+
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* CustomCard */
 
 .login_card {
     background-color: rgba(173, 173, 173, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
     height: auto;
     width: auto;
     border-radius: 10px;
     padding: 20px;
+    border: #0360da solid 1px;
 }
+
+.logintext {
+    color: #9a4601 !important;
+}
+
+
+.divider {
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}
+
 
 .radio-group {
     display: flex;
@@ -22,6 +184,7 @@
     margin-bottom: 25px;
 
 }
+
 
 .custom-radio {
     display: flex;
@@ -77,190 +240,6 @@
     background-color: transparent !important;
 }
 
-.submit {
-    background-color: #0039a3;
-    color: aliceblue;
-    height: 45px;
-    width: 160px;
-    border-radius: 8px;
-    border-width: 0px;
-    display: block;
-    margin: 0 auto;
-}
-
-
-
-
-/* FULL SCREEN LAYOUT */
-.main-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Poppins' !important;
-    margin: 0;
-    font-size: 16px;
-
-    background: url('./sources/Background.jpg') no-repeat center 20% / cover fixed;
-}
-
-/* Top logo area */
-.top-logo {
-    display: flex;
-    align-items: start;
-
-
-
-}
-
-
-
-
-.Logo {
-    max-height: 60%;
-    width: auto;
-    margin-top: 0 !important;
-
-}
-
-/* Hero fills remaining space */
-.hero-section {
-    flex: 1;
-    display: flex;
-    align-items: center;
-   
-    flex-grow: 1;
-
-}
-
-@media screen and (max-width: 991.98px) {
-    .hero-section {
-        
-        margin-top:15%;
-        
-    }
-    
-}
-
-.campus-img {
-    width: 100%;        
-    max-width: 420px;     
-    height: auto;      
-    object-fit: contain;  
-    display: block;
-    margin: 10px auto;
-
-} 
-
-
-
-/* Tablets (below 992px) */
-@media (max-width: 991.98px) {
-    .campus-img {
-        width: 400px;
-        max-width: 450px;
-        margin-bottom: 20px;
-        
-
-    }
-}
-
-/* Mobiles */
-@media (max-width: 768px) {
-    .campus-img {
-        max-width: 260px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    .campus-img {
-        max-width: 180px;
-    }
-}
-
-/* Card sizing */
-.login_card {
-    max-width: 420px;
-    width: 100%;
-}
-
-/*  Mobile scroll allowed */
-@media (max-width: 992px) {
-    .main-page {
-        height: auto;
-        overflow: auto;
-    }
-
-}
-
-.links a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-
-
-    color: #fff;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
-    padding: 4px 10px;
-    border-radius: 6px;
-
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-}
-
-/* Hover: show brand gradient */
-/* .links a:hover {
-    background: linear-gradient(90deg, #ff5e00, #0039a3);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #ff5e00;
-    
-    transform: scale(1.06);
-} */
-
-/* BLUR GLASS LAYER */
-.links a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    /* glass tint */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    opacity: 0;
-    transition: 0.3s ease;
-    z-index: -1;
-}
-
-/* HOVER EFFECT */
-.links a:hover {
-    background: linear-gradient(90deg, #ff5e00, #0039a3);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #ff5e00;
-    transform: scale(1.06);
-}
-
-/* SHOW BLUR ON HOVER */
-.links a:hover::before {
-    opacity: 1;
-}
-
-.divider {
-    height: 1px;
-    background-color: #ffffff;
-    margin: 10px 0;
-}
 
 .custominput {
     background-color: transparent !important;
@@ -270,4 +249,16 @@
 input::placeholder {
     color: #ffff !important;
     opacity: 1 !important;
+}
+
+
+.submit {
+    background-color: #0039a3;
+    color: aliceblue;
+    height: 45px;
+    width: 160px;
+    border-radius: 8px;
+    border-width: 0px;
+    display: block;
+    margin: 0 auto;
 }
